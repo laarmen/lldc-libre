@@ -1,0 +1,15 @@
+  * Ajouter une plateforme de test pour que les gens puissent être réellement productifs
+  * Ajouter une sous-balise de position à "for" dans le moteur de template:
+    + {% position single|first|last|normal/endposition %} permettrait de spécifier des alternatives
+    utilisées dans des cas spécifiques sans avoir à se taper des if à la con et des index inutiles.
+      - single est utilisé dans le cas où il n'y a qu'un seul élément dans la liste
+      - first est utilisé si l'élément est le premier de la liste
+      - last est utilisé pour le dernier élément de la liste
+      - normal est pour le reste (et n'est pas valide si utilisé tout seul, bien sûr)
+    Ça donnerait un truc genre "Alors on a {%for e in list %}
+    {% position single %} que {{e}}.
+    {% position first %} d'abord {{e}}, puis 
+    {% position last %} et enfin {{e}}.
+    {% position normal %} {{e}},
+    {% endposition %}
+
