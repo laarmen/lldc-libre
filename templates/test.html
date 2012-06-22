@@ -1,0 +1,35 @@
+{% extends "base_test.html" %}
+
+Out of inheritance.
+
+{% block body %}
+{{simple}}
+{{iterable["iteration"]}}
+{{iterable[nest]}}
+Test body
+{% if petit < grand %}
+{{petit_text}} est plus petit que {{grand_text}}.
+{% endif %}
+{% if tres_petit == tres_grand %}
+Qui est {{ tres_petit_text }} est {{tres_grand_text}}.
+{% else %}
+Qui est {{ tres_petit_text }} n'est pas {{tres_grand_text}}.
+{% endif %}
+
+{% if !faux %}
+VRAI !
+{% endif %}
+{% if !vrai %}
+FAUX !
+{% endif %}
+
+{% for a,b in key_tab %}
+{{a}} is {{b}}
+{% endfor %}
+
+{% for nb in fib %}
+{% if nb > 0 %} ,{% endif %}{{nb}}
+{% endfor %}
+
+{% endblock %}
+

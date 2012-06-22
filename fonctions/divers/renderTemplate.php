@@ -232,7 +232,7 @@ function renderLineArray(&$iterator, &$tplArgs, &$renderedBlocks, &$parent, $end
  */
 function renderTemplate($fileName, &$tplArgs, $ignoreInheritance = False, &$renderedBlocks = NULL) {
 
-    $iterator = new ArrayIterator(file($fileName));
+    $iterator = new ArrayIterator(file(TEMPLATES_DIR.'/'.$fileName));
 
     if (!$renderedBlocks)
         $renderedBlocks = array();
